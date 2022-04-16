@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lekton&display=swap");
+
+// $Poppins: "Lekton", sans-serif;
+$Poppins: "Poppins", sans-serif;
+
+//colors
+
+$dark: rgb(29, 29, 29);
+$light: #fff;
+$primary: #ffd60b;
+$bg: #222522;
+
+//spacing
+
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+//border radius     alo
+$borderRadius: 12px;
+
+//header height
+$headerHeight: 60px;
+
+$imgHeight: 320px;
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    //768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: 480px) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+@mixin text($size) {
+  @if $size == sm {
+    //768px
+    @media (min-width: 380px) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpointHeight($height) {
+  @if $height == sm1 {
+    //768px
+    @media (min-height: 668px) {
+      @content;
+    }
+  } @else if $height == md1 {
+    @media (min-height: 724px) {
+      @content;
+    }
+  } @else if $height == md2 {
+    @media (min-height: 739px) {
+      @content;
+    }
+  } @else if $height == lg1 {
+    @media (min-height: 1023px) {
+      @content;
+    }
+  } @else if $height == xl1 {
+    @media (min-height: 1200px) {
+      @content;
+    }
+  }
+}

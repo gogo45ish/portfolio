@@ -1,0 +1,75 @@
+@import "./../../styles/variables.scss";
+
+.box {
+  padding: 0 50px;
+  // padding: 0;
+  display: block;
+  @include breakpoint(lg) {
+    padding: 0 10rem;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+  }
+  @include breakpoint(md) {
+    // display: grid;
+    // grid-template-columns: 3fr 2fr;
+    // gap: 50px;
+  }
+  &__content {
+    display: block;
+    // border: 1px solid black;
+    border-radius: $borderRadius;
+    box-shadow: 0 0 20px #ffffffa1;
+    font-size: 18px;
+    color: #0a0a0a;
+    background-color: rgb(163, 163, 163);
+
+    padding: 10px;
+    p {
+      margin-bottom: 15px;
+    }
+  }
+  &__imgBx {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    &__img {
+      height: 180px;
+      width: auto;
+      // width: 200px;
+      border-radius: 50px;
+      box-shadow: 0 0 20px #ffffffa1;
+
+      @include breakpoint(sm) {
+        // width: 300px;
+        // height: calc(70vh - #{$imgHeight});
+        height: 200px;
+      }
+      @include breakpoint(md) {
+        // width: 300px;
+        height: 320px;
+        // height: calc(70vh - #{$imgHeight});
+      }
+      @include breakpoint(lg) {
+        // width: 300px;
+        height: $imgHeight;
+      }
+
+      transition: 0.3s ease all;
+    }
+    // @include breakpoint(md) {
+    //   display: grid;
+    //   grid-template-columns: 3fr 2fr;
+    //   gap: 50px;
+    // }
+  }
+}
+.title {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+}

@@ -1,0 +1,78 @@
+@import "./../../styles/variables.scss";
+
+.box {
+  display: block;
+  padding: 20px 0;
+
+  &__icons {
+    // display: flex;
+    // flex-direction: column;
+    // display: grid;
+    // width: 500px;
+    // justify-content: center;
+    // grid-template-columns: ;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px 12px;
+    grid-template-areas:
+      ". ."
+      ". ."
+      ". .";
+    @include breakpoint(sm) {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 20px 12px;
+      grid-template-areas:
+        ". . ."
+        ". . ."
+        ". . .";
+    }
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 40px 0px;
+      padding-left: 80px;
+      padding-right: 80px;
+      grid-template-areas:
+        ". . . ."
+        ". . . .";
+    }
+    @include breakpoint(md) {
+      gap: 40px 0px;
+    }
+    &__icon {
+      padding: 5px 0;
+      display: inline-block;
+      height: 90px;
+      width: auto;
+      // box-shadow: 10px 5px 5px rgb(153, 149, 149);
+      &:hover {
+        transform: scale(1.4);
+        // box-shadow: 5px 10px 8px 10px #888888;
+      }
+      transition: 0.3s ease all;
+
+      @include breakpoint(sm) {
+        height: 100px;
+      }
+      @include breakpoint(md) {
+        height: 110px;
+      }
+      @include breakpoint(lg) {
+        height: 120px;
+      }
+    }
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+}

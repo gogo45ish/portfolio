@@ -1,0 +1,27 @@
+@import "./../../styles/variables.scss";
+
+.section {
+  margin-top: 0;
+  height: calc(170vh - #{$headerHeight});
+  @include breakpointHeight(sm1) {
+    height: calc(100vh - #{$headerHeight});
+  }
+  @include breakpointHeight(md1) {
+    //724px
+    height: calc(100vh - #{$headerHeight});
+  }
+  @include breakpointHeight(md2) {
+    //740px
+    height: calc(160vh - #{$headerHeight});
+  }
+  @include breakpointHeight(lg1) {
+    //740px
+    height: calc(80vh - #{$headerHeight});
+  }
+  // @include breakpoint(md) {
+  //
+  //   height: calc(130vh - #{$headerHeight});
+  // }
+  background: $bg;
+  width: 100%;
+}

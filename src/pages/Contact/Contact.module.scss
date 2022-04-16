@@ -1,0 +1,248 @@
+@import "./../../styles/variables.scss";
+
+.title {
+  text-align: center;
+  margin-top: 100px;
+}
+.box {
+  top: 50%;
+  // left: 50%;
+  // -webkit-transform: translate(50%, 50%);
+  transform: translateY(120px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__btn {
+    margin-top: 30px;
+    input {
+      max-width: 200px;
+      cursor: pointer;
+      outline: none;
+      padding: 0.6rem 1rem;
+      border-radius: $borderRadius;
+      font-size: 1rem;
+      font-family: inherit;
+      background: $primary;
+      color: $dark;
+      border: 1px solid transparent;
+      transition: 0.3s ease all;
+
+      &:hover {
+        border-color: $primary;
+        background: linear-gradient(rgba($primary, 0.1), rgba($primary, 0.2));
+        color: $primary;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.7fr 0.7fr 1.7fr;
+    gap: 0px 14px;
+    grid-template-areas:
+      "name email"
+      "subject subject"
+      "textArea textArea"
+      "btn btn";
+    &__textArea {
+      grid-area: textArea;
+    }
+    &__subject {
+      grid-area: subject;
+    }
+    &__name {
+      grid-area: name;
+    }
+    &__email {
+      grid-area: email;
+    }
+    &__btn {
+      grid-area: btn;
+    }
+  }
+
+  .customField {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    input,
+    textarea {
+      color: black;
+      font-size: 14px;
+      font-family: $Poppins;
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      // background: #f2f2f2;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      width: 250px;
+      outline: none;
+      background: linear-gradient(90deg, #ffd60b, #ffd60b) center bottom/ 0 3px
+          no-repeat,
+        linear-gradient(90deg, #ccc, #ccc) left bottom/ 100% 3px no-repeat,
+        linear-gradient(90deg, #afafaf, #afafaf) left bottom/ 100% no-repeat;
+      transition: background-size 0.3s ease;
+      &:focus,
+      &:valid {
+        background-size: 100% 3px, 100% 3px, 100%;
+        &::placeholder {
+          color: transparent;
+          transition: color 0.3s ease;
+        }
+      }
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+        width: 350px;
+        &.subjectInput {
+          width: 720px;
+        }
+        &.nameInput {
+          float: right;
+        }
+
+        &.emailInput {
+          float: left;
+        }
+      }
+    }
+    textarea {
+      resize: none;
+      width: 250px;
+      height: 100px;
+      max-width: 250px;
+      max-height: 100px;
+
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        font-family: $Poppins;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        font-family: $Poppins;
+      }
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        font-family: $Poppins;
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        font-family: $Poppins;
+      }
+      @include breakpoint(md) {
+        width: 720px;
+        max-width: 720px;
+        height: 200px;
+        max-height: 200px;
+      }
+    }
+  }
+  .error {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    input,
+    textarea {
+      color: white;
+      font-size: 14px;
+      font-family: $Poppins;
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      background: #f2f2f2;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      width: 250px;
+      outline: none;
+      background: linear-gradient(90deg, red, red) center bottom/ 0 3px
+          no-repeat,
+        linear-gradient(90deg, #ccc, #ccc) left bottom/ 100% 3px no-repeat,
+        linear-gradient(90deg, #1f1c1c, #1f1c1c) left bottom/ 100% no-repeat;
+      transition: background-size 0.3s ease;
+      background-size: 100% 2px, 100% 2px, 100%;
+
+      // &:focus,
+      // &:valid {
+      //   background-size: 100% 2px, 100% 2px, 100%;
+      //   &::placeholder {
+      //     color: transparent;
+      //     transition: color 0.3s ease;
+      //   }
+      // }
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+        width: 350px;
+        &.subjectInput {
+          width: 720px;
+        }
+        &.nameInput {
+          float: right;
+        }
+
+        &.emailInput {
+          float: left;
+        }
+      }
+    }
+    textarea {
+      resize: none;
+      width: 250px;
+      height: 100px;
+      max-width: 250px;
+      max-height: 100px;
+
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        font-family: $Poppins;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        font-family: $Poppins;
+      }
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        font-family: $Poppins;
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        font-family: $Poppins;
+      }
+      @include breakpoint(md) {
+        width: 720px;
+        max-width: 720px;
+        height: 200px;
+        max-height: 200px;
+      }
+    }
+  }
+
+  // // padding-top: 500px;
+  // &__inputText,
+  // &__inputText1,
+  // &__inputText2,
+  // &__inputText3 {
+  //   // align-content: center;
+  //   padding: 10px 0;
+  // }
+
+  // &__inputText2 {
+  //   // float: left;
+  //   label {
+  //     input {
+  //       width: 500px;
+  //     }
+  //   }
+  // }
+}
